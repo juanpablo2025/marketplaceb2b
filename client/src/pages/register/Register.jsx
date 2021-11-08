@@ -10,9 +10,7 @@ export default function Register() {
   const password = useRef();
   const passwordAgain = useRef();
   const history = useHistory();
-  const axiosInstance = axios.create({
-    baseURL: "https://http://159.203.177.18:8800",
-  });
+
   const handleClick = async (e) => {
     e.preventDefault();
     if (passwordAgain.current.value !== password.current.value) {
@@ -24,7 +22,7 @@ export default function Register() {
         password: password.current.value,
       };
       try {
-        await axiosInstance.post("/auth/register", user);
+        await axios.post("/auth/register", user);
         history.push("/login");
       } catch (err) {
         console.log(err);
