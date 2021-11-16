@@ -31,7 +31,7 @@ export default function Login() {
         <div className="loginRight">
           <div className="loginTitle">
             <h4>
-              <b>Iniciar Sesion</b>
+              <b>Iniciar Sesión</b>
             </h4>
           </div>
           <div className="loginTitleLink">
@@ -62,7 +62,7 @@ export default function Login() {
               {isFetching ? (
                 <CircularProgress color="white" size="20px" />
               ) : (
-                "Iniciar sesion"
+                "Iniciar sesión"
               )}
             </button>
             <span className="loginForgot">Olvidaste la contraseña?</span>
