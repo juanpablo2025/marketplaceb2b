@@ -1,17 +1,14 @@
 import Topbar from "../../components/topbar/Topbar";
-
+import Slider from "../../components/Slider";
 import Footer from "../../components/Footer";
-
-import Products from "../../components/Products";
-import Categories from "../../components/Categories";
 
 export default function Home() {
   return (
     <>
       <Topbar />
+
+      <Slider />
       <div className="homeContainer">
-        <Categories />
-        <Products />
         <Footer />
       </div>
     </>

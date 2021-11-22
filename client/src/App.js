@@ -12,10 +12,11 @@ import {
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import Messenger from "./pages/messenger/Messenger";
-import Client from "./pages/Provider";
+import Provider from "./pages/Provider";
 import Product from "./pages/Product";
 import ProductList from "./pages/ProductList";
 import Cart from "./pages/Cart";
+import Success from "./pages/Success";
 function App() {
   const { user } = useContext(AuthContext);
   return (
@@ -40,8 +41,11 @@ function App() {
         <Route path="/cart">
           <Cart />
         </Route>
-        <Route path="/client">
-          <Client />
+        <Route path="/success">
+          <Success />
+        </Route>
+        <Route path="/provider">
+          <Provider />
         </Route>
         <Route path="/profile/:username">
           <Profile />

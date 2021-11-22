@@ -22,9 +22,7 @@ export default function Messenger({ username }) {
 
   const [posts, setPosts] = useState([]);
   const { user } = useContext(AuthContext);
-  useEffect(() => {
-    window.location.href = "http://nodox.co:3001/";
-  }, []);
+
   useEffect(() => {
     const fetchPosts = async () => {
       const res = username

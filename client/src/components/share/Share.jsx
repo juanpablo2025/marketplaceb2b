@@ -15,7 +15,7 @@ export default function Share() {
 
   const desc = useRef();
   const price = useRef();
-  const title = useRef();
+
   const category = useRef();
   const size = useRef();
   const color = useRef();

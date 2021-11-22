@@ -15,7 +15,7 @@ import Messenger from "./pages/messenger/Messenger";
 import Client from "./pages/Client";
 import Product from "./pages/Product";
 import ProductList from "./pages/ProductList";
-import Cart from "./pages/Cart";
+
 function App() {
   const { user } = useContext(AuthContext);
   return (
@@ -36,9 +36,6 @@ function App() {
         </Route>
         <Route path="/productList">
           <ProductList />
-        </Route>
-        <Route path="/cart">
-          <Cart />
         </Route>
         <Route path="/client">
           <Client />

@@ -1,41 +1,29 @@
-import {
-  Chat,
-  FavoriteBorderOutlined,
-  SearchOutlined,
-  ShoppingCartOutlined,
-} from "@material-ui/icons";
+import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
 
-const Info = styled.div`
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  z-index: 3;
+import Footer from "../components/Footer";
+import Topbar from "../components/topbar/Topbar";
+
+import { mobile } from "../responsive";
+
+const Container = styled.div``;
+
+const Wrapper = styled.div`
+  padding: 50px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.5s ease;
-  cursor: pointer;
+  ${mobile({ padding: "10px", flexDirection: "column" })}
 `;
 
-const Container = styled.div`
+const ImgContainer = styled.div`
   flex: 1;
   margin: 5px;
-  min-width: 280px;
+  min-width: 350px;
   height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #f5fbfd;
   position: relative;
-
-  &:hover ${Info}{
-    opacity: 1;
-  }
 `;
 
 const Circle = styled.div`
@@ -47,43 +35,146 @@ const Circle = styled.div`
 `;
 
 const Image = styled.img`
-  height: 75%;
-  z-index: 2;
+  width: 100%;
+  height: 42vh;
+  object-fit: cover;
+  ${mobile({ height: "40vh" })}
 `;
 
-const Icon = styled.div`
-  width: 40px;
-  height: 40px;
+const InfoContainer = styled.div`
+  flex: 1;
+  padding: 0px 50px;
+  ${mobile({ padding: "10px" })}
+`;
+
+const Title = styled.h1`
+  font-weight: 200;
+`;
+
+const Desc = styled.p`
+  margin: 20px 0px;
+`;
+
+const Price = styled.span`
+  font-weight: 100;
+  font-size: 40px;
+`;
+
+const FilterContainer = styled.div`
+  width: 50%;
+  margin: 30px 0px;
+  display: flex;
+  justify-content: space-between;
+  ${mobile({ width: "100%" })}
+`;
+
+const Filter = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const FilterTitle = styled.span`
+  font-size: 20px;
+  font-weight: 200;
+`;
+
+const FilterColor = styled.div`
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background-color: white;
+  background-color: ${(props) => props.color};
+  margin: 0px 5px;
+  cursor: pointer;
+`;
+
+const FilterSize = styled.select`
+  margin-left: 10px;
+  padding: 5px;
+`;
+
+const FilterSizeOption = styled.option``;
+
+const AddContainer = styled.div`
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  ${mobile({ width: "100%" })}
+`;
+
+const AmountContainer = styled.div`
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+`;
+
+const Amount = styled.span`
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid teal;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px;
-  transition: all 0.5s ease;
+  margin: 0px 5px;
+`;
+
+const Button = styled.button`
+  padding: 15px;
+  border: 2px solid teal;
+  background-color: white;
+  cursor: pointer;
+  font-weight: 500;
   &:hover {
-    background-color: #e9f5f5;
-    transform: scale(1.1);
+    background-color: #f8f4f4;
   }
 `;
 
-const Product = ({ item }) => {
+const Product = () => {
   return (
     <Container>
-      <Circle />
-      <Image src={item.img} />
-      <Info>
-      <Icon>
-          <Chat/>
-      </Icon> 
-        <Icon>
-          <SearchOutlined />
-        </Icon>
-        <Icon>
-          <FavoriteBorderOutlined />
-        </Icon>
-       
-      </Info>
+      <Topbar />
+
+      <Wrapper>
+        <ImgContainer>
+          <Circle />
+          <Image />
+        </ImgContainer>
+        <InfoContainer>
+          <Title>Producto de prueba</Title>
+          <Desc>Descripcion de prueba</Desc>
+          <Price>$0000</Price>
+          <FilterContainer>
+            <Filter>
+              <FilterTitle>Colores</FilterTitle>
+              <FilterColor color="black" />
+              <FilterColor color="darkblue" />
+              <FilterColor color="gray" />
+              <FilterColor color="cream" />
+            </Filter>
+            <Filter>
+              <FilterTitle>Tamaños:</FilterTitle>
+              {/* <FilterSize>
+                <FilterSizeOption>XS</FilterSizeOption>
+                <FilterSizeOption>S</FilterSizeOption>
+                <FilterSizeOption>M</FilterSizeOption>
+                <FilterSizeOption>L</FilterSizeOption>
+                <FilterSizeOption>XL</FilterSizeOption>
+             </FilterSize>:*/}
+            </Filter>
+          </FilterContainer>
+          <AddContainer>
+            <AmountContainer>
+              <Remove />
+              <Amount>1</Amount>
+              <Add />
+            </AmountContainer>
+            <Button>Añadir</Button>
+          </AddContainer>
+        </InfoContainer>
+      </Wrapper>
+
+      <Footer />
     </Container>
   );
 };

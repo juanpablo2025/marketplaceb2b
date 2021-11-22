@@ -1,5 +1,12 @@
 import { Badge } from "@material-ui/core";
-import { Search, ShoppingCartOutlined } from "@material-ui/icons";
+import {
+  Search,
+  ShoppingCartOutlined,
+  Chat,
+  AccountCircle,
+  Home,
+  ExitToApp,
+} from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
 import { mobile } from "../../responsive";
@@ -91,19 +98,31 @@ const Topbar = () => {
           <MenuItem>
             <Link to={`/client`}>IR A COMPRAR</Link>
           </MenuItem>
-
           <MenuItem>
-            <Link to={`/messenger`}>CHAT(Beta Preview)</Link>
+            <Badge>
+              <Home />
+              <Link to={`/`}>INICIO</Link>
+            </Badge>
           </MenuItem>
           <MenuItem>
-            <Link to={`/profile/${user.username}`}>{user.username}</Link>
+            <Badge>
+              <Chat /> <Link to={"/messenger"}>CHAT</Link>
+            </Badge>
           </MenuItem>
-
           <MenuItem>
-            <MenuItem>
-              <span onClick={() => dispatch(logout())}>Salir</span>
-            </MenuItem>
+            <Badge>
+              <AccountCircle />{" "}
+              <Link to={`/profile/${user.username}`}>
+                {user.username.toUpperCase()}
+              </Link>
+            </Badge>
           </MenuItem>
+          <MenuItem>
+            <Badge>
+              <ExitToApp />
+              <span onClick={() => dispatch(logout())}>SALIR</span>
+            </Badge>
+          </MenuItem>{" "}
         </Right>
       </Wrapper>
     </Container>

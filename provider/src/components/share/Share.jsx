@@ -15,7 +15,7 @@ export default function Share() {
 
   const desc = useRef();
   const price = useRef();
-  const title = useRef();
+
   const category = useRef();
   const size = useRef();
   const color = useRef();
@@ -27,6 +27,11 @@ export default function Share() {
     const newPost = {
       userId: user._id,
       desc: desc.current.value,
+      price: price.current.value,
+      category: category.current.value,
+      size: size.current.value,
+      color: color.current.value,
+      inStock: inStock.current.value,
     };
     if (file) {
       const data = new FormData();

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 
-function Provider() {
+function Client() {
   useEffect(() => {
-    window.location.href = "http://159.203.177.18:3001/";
+    window.location.href = "http://localhost:3000/";
   }, []);
 
   return <div></div>;
 }
 
-export default Provider;
+export default Client;

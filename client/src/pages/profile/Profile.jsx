@@ -8,7 +8,7 @@ import axios from "axios";
 import { useParams } from "react-router";
 
 export default function Profile() {
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  //const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const [user, setUser] = useState({});
   const username = useParams().username;
 
@@ -24,7 +24,6 @@ export default function Profile() {
     <>
       <Navbar />
       <div className="profile">
-        {/* <Sidebar />*/}
         <div className="profileRight">
           <div className="profileRightTop">
             <div className="profileCover">
