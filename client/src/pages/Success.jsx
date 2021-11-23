@@ -5,7 +5,7 @@ import { userRequest } from "../requestMethods";
 
 const Success = () => {
   const location = useLocation();
-  //in Cart.jsx I sent data and cart. Please check that page for the changes.(in video it's only data)
+  //in Cart.jsx I sent data and cart. Please check that page for the changes
   const data = location.state.stripeData;
   const cart = location.state.cart;
   const currentUser = useSelector((state) => state.user.currentUser);
@@ -40,8 +40,8 @@ const Success = () => {
       }}
     >
       {orderId
-        ? `Order has been created successfully. Your order number is ${orderId}`
-        : `Successfull. Your order is being prepared...`}
+        ? `la orden a sido creada correctamente. numero de orden ${orderId}`
+        : `Listo. tu orden esta siendo preparada...`}
       <button style={{ padding: 10, marginTop: 20 }}>Volver al inicio</button>
     </div>
   );

@@ -2,7 +2,7 @@ import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
 
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import Topbar from "../components/topbar/Topbar";
 
 import { mobile } from "../responsive";
 
@@ -16,11 +16,27 @@ const Wrapper = styled.div`
 
 const ImgContainer = styled.div`
   flex: 1;
+  margin: 5px;
+  min-width: 350px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5fbfd;
+  position: relative;
+`;
+
+const Circle = styled.div`
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
 `;
 
 const Image = styled.img`
   width: 100%;
-  height: 90vh;
+  height: 42vh;
   object-fit: cover;
   ${mobile({ height: "40vh" })}
 `;
@@ -109,7 +125,6 @@ const Button = styled.button`
   background-color: white;
   cursor: pointer;
   font-weight: 500;
-
   &:hover {
     background-color: #f8f4f4;
   }
@@ -118,11 +133,12 @@ const Button = styled.button`
 const Product = () => {
   return (
     <Container>
-      <Navbar />
+      <Topbar />
 
       <Wrapper>
         <ImgContainer>
-          <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
+          <Circle />
+          <Image />
         </ImgContainer>
         <InfoContainer>
           <Title>Producto de prueba</Title>

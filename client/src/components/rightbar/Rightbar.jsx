@@ -62,7 +62,7 @@ export default function Rightbar({ user }) {
       <>
         {user.username !== currentUser.username && (
           <button className="rightbarFollowButton" onClick={handleClick}>
-            {followed ? "No recomendar mas" : "Recomendar"}
+            {followed ? "No recomendar mas" : "Favorito"}
             {followed ? <Remove /> : <Add />}
           </button>
         )}
