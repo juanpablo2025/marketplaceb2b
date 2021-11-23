@@ -66,14 +66,14 @@ export default function Messenger({ username }) {
   useEffect(() => {
     const getConversations = async () => {
       try {
-        const res = await axios.get("/conversations/" + user._id);
+        const res = await axios.get("/conversations/" + username);
         setConversations(res.data);
       } catch (err) {
         console.log(err);
       }
     };
     getConversations();
-  }, [user._id]);
+  }, [username]);
 
   useEffect(() => {
     const getMessages = async () => {
@@ -144,7 +144,7 @@ export default function Messenger({ username }) {
                 <div className="chatBoxTop">
                   {messages.map((m) => (
                     <div ref={scrollRef}>
-                      <Message message={m} own={m.sender === user._id} />
+                      <Message message={m} own={m.sender === username} />
                     </div>
                   ))}
                 </div>
