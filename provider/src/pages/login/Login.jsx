@@ -23,11 +23,9 @@ export default function Login() {
       <div className="loginWrapper">
         <div className="loginLeft">
           <span>Proveedores</span>
-          <h3 className="loginLogo">nodox</h3>
+          <h3 className="loginLogo">Marketb2b</h3>
 
-          <span className="loginDesc">
-            Conecta con tus proveedores y clientes.
-          </span>
+          <span className="loginDesc">Conecta con clientes</span>
         </div>
         <div className="loginRight">
           <div className="loginTitle">

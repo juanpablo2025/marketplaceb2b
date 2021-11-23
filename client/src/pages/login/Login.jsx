@@ -22,11 +22,9 @@ export default function Login() {
     <div className="login">
       <div className="loginWrapper">
         <div className="loginLeft">
-          <h3 className="loginLogo">nodox</h3>
+          <h3 className="loginLogo">marketplaceb2b</h3>
 
-          <span className="loginDesc">
-            Conecta directamente con proveedores.
-          </span>
+          <span className="loginDesc">Conecta con tus tiendas favoritas</span>
         </div>
         <div className="loginRight">
           <div className="loginTitle">
@@ -65,7 +63,7 @@ export default function Login() {
                 "Iniciar sesión"
               )}
             </button>
-            <span className="loginForgot">Olvidaste la contraseña?</span>
+            {/* <span className="loginForgot">Olvidaste la contraseña?</span>*/}
           </form>
         </div>
       </div>

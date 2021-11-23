@@ -3,13 +3,12 @@ import Topbar from "../../components/topbar/Topbar";
 import Conversation from "../../components/conversations/Conversation";
 import Message from "../../components/message/Message";
 import ChatOnline from "../../components/chatOnline/ChatOnline";
-import { useContext, useEffect, useRef, useState, useParams } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 import { io } from "socket.io-client";
-import MessengerProduct from "../../components/messengerproduct/MessengerProduct";
 
-export default function Messenger({ username }) {
+export default function Messenger() {
   const [conversations, setConversations] = useState([]);
   const [currentChat, setCurrentChat] = useState(null);
   const [messages, setMessages] = useState([]);
@@ -17,26 +16,9 @@ export default function Messenger({ username }) {
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
   const socket = useRef();
-
+  const { user } = useContext(AuthContext);
   const scrollRef = useRef();
 
-  const [posts, setPosts] = useState([]);
-  const { user } = useContext(AuthContext);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const res = username
-        ? await axios.get("/posts/profile/" + username)
-        : await axios.get("posts/timeline/" + user._id);
-      setPosts(
-        res.data.sort((p1, p2) => {
-          return new Date(p2.createdAt) - new Date(p1.createdAt);
-        })
-      );
-    };
-
-    fetchPosts();
-  }, [username, user._id]);
   useEffect(() => {
     socket.current = io("ws://localhost:8900");
     socket.current.on("getMessage", (data) => {
@@ -124,17 +106,12 @@ export default function Messenger({ username }) {
       <div className="messenger">
         <div className="chatMenu">
           <div className="chatMenuWrapper">
-            <input placeholder="Buscar chat" className="chatMenuInput" />
+            <input placeholder="Search for friends" className="chatMenuInput" />
             {conversations.map((c) => (
               <div onClick={() => setCurrentChat(c)}>
                 <Conversation conversation={c} currentUser={user} />
               </div>
             ))}
-            <ChatOnline
-              onlineUsers={onlineUsers}
-              currentId={user._id}
-              setCurrentChat={setCurrentChat}
-            />
           </div>
         </div>
         <div className="chatBox">
@@ -156,23 +133,24 @@ export default function Messenger({ username }) {
                     value={newMessage}
                   ></textarea>
                   <button className="chatSubmitButton" onClick={handleSubmit}>
-                    Enviar
+                    Send
                   </button>
                 </div>
               </>
             ) : (
               <span className="noConversationText">
-                Iniciar una conversacion
+                Open a conversation to start a chat.
               </span>
             )}
           </div>
         </div>
         <div className="chatOnline">
           <div className="chatOnlineWrapper">
-            {!username || username === user.username}
-            {posts.map((p) => (
-              <MessengerProduct key={p._id} post={p} />
-            ))}
+            <ChatOnline
+              onlineUsers={onlineUsers}
+              currentId={user._id}
+              setCurrentChat={setCurrentChat}
+            />
           </div>
         </div>
       </div>
