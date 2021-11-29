@@ -2,7 +2,7 @@
  
 installation: npm install
 
-create .env file with MONGOD connection
+create .env file with MONGODB connection
 
 
 run: npm run start
