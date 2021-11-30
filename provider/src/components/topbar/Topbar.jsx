@@ -86,8 +86,8 @@ const Topbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <Logo>nodox</Logo>
-          <Language>Proveedor</Language>
+          <Logo>MarketB2B</Logo>
+          <Language>Vendedor</Language>
           <SearchContainer>
             <Input placeholder="Buscar" />
             <Search style={{ color: "gray", fontSize: 16 }} />

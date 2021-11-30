@@ -87,7 +87,7 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <Logo>nodox</Logo>
+          <Logo>MarketB2BB</Logo>
           <SearchContainer>
             <Input placeholder="Buscar" />
             <Search style={{ color: "gray", fontSize: 16 }} />
