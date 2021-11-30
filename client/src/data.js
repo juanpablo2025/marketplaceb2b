@@ -1,75 +1,79 @@
 export const sliderItems = [
   {
     id: 1,
-    //img: "https://i.ibb.co/1n1nj1R/tantas-verduras-campo-181624-18619.jpg",
-    title: "nodox",
-    desc: "Contacta con proveedores y compra sus productos.",
-    bg: "fcf1ed",
+    img: "https://i.ibb.co/XsdmR2c/1.png",
+    title: "SUMMER SALE",
+    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+    bg: "f5fafd",
   },
   {
     id: 2,
-    //img: "https://i.ibb.co/DG69bQ4/2.png",
-    title: "nodox proveedores",
-    desc: "Administra tus productos, contacta con clientes y otros proveedores.",
-    bg: "f5fafd",
+    img: "https://i.ibb.co/DG69bQ4/2.png",
+    title: "AUTUMN COLLECTION",
+    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+    bg: "fcf1ed",
   },
-];
-
-export const profilepicture = [
   {
-    img: "https://ccppasco.sacpro.pe/uploads/member_image/default.jpg",
+    id: 3,
+    img: "https://i.ibb.co/cXFnLLV/3.png",
+    title: "LOUNGEWEAR LOVE",
+    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+    bg: "fbf0f4",
   },
 ];
 
 export const categories = [
   {
     id: 1,
-    img: "https://image.freepik.com/foto-gratis/tantas-verduras-campo_181624-18619.jpg",
-    title: "AGROINDUSTRIA",
+    img: "https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    title: "SHIRT STYLE!",
+    cat: "women",
   },
   {
     id: 2,
-    img: "https://st.depositphotos.com/2048001/2421/i/600/depositphotos_24212193-stock-photo-textile-machine-with-rainbow-colors.jpg",
-    title: "TEXTIL",
+    img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    title: "LOUNGEWEAR LOVE",
+    cat: "coat",
   },
   {
     id: 3,
-    img: "https://www.elcolombiano.com/binrepository/1200x802/0c120/1200d627/none/11101/LQMH/shutterstock-786092152_37315560_20210310083352.jpg",
-    title: "CONSTRUCCIÓN",
+    img: "https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    title: "LIGHT JACKETS",
+    cat: "jeans",
   },
 ];
 
 export const popularProducts = [
   {
     id: 1,
-    img: "https://www.insumoserma.com/images/gallery/i9.jpg",
+    img: "https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
   },
   {
     id: 2,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQca2lQX03_aPuhfBZZZVVkDGAdfuk-vlLcog&usqp=CAU",
+    img: "https://cdn.shopify.com/s/files/1/0101/4832/products/Angela_Natural_Tee.png?v=1606780388",
   },
   {
     id: 3,
-    img: "https://www.hgsitebuilder.com/files/writeable/uploads/hostgator578244/image-thumbs/30404010.jpg",
+    img: "https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png",
   },
   {
     id: 4,
-    img: "https://www.mundotecno.com.uy/imgs/productos/productos31_2810.jpg",
+    img: "https://www.burdastyle.com/pub/media/catalog/product/cache/7bd3727382ce0a860b68816435d76e26/107/BUS-PAT-BURTE-1320516/1170x1470_BS_2016_05_132_front.png",
   },
   {
     id: 5,
-    img: "https://www.insumoserma.com/images/gallery/r5.jpg",
+    img: "https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png",
   },
   {
     id: 6,
-    img: "https://m.media-amazon.com/images/I/71ZJn4PzfzL._AC_SY679_.jpg",
+    img: "https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
   },
   {
     id: 7,
-    img: "https://images.rappi.com/products/2092566123-1612555058834.png?d=200x200&e=webp",
+    img: "https://www.vintageindustries.nl/download_front/qympzk1762/2217_Arrow_Jacket_Forest.png",
   },
   {
     id: 8,
-    img: "https://profesionalagro.com/noticias/imagenes/2020/10/0110101-aguagcate.jpg",
+    img: "https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
   },
 ];

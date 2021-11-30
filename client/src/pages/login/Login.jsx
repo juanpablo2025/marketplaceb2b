@@ -22,7 +22,7 @@ export default function Login() {
     <div className="login">
       <div className="loginWrapper">
         <div className="loginLeft">
-          <h3 className="loginLogo">marketplaceb2b</h3>
+          <h3 className="loginLogo">marketb2b</h3>
 
           <span className="loginDesc">Conecta con tus tiendas favoritas</span>
         </div>

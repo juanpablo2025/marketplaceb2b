@@ -66,7 +66,7 @@ export default function Messenger({ username }) {
   useEffect(() => {
     const getConversations = async () => {
       try {
-        const res = await axios.get("/conversations/" + user._id);
+        const res = await axios.get("/conversations/" + user?._id);
         setConversations(res.data);
       } catch (err) {
         console.log(err);
@@ -90,7 +90,8 @@ export default function Messenger({ username }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const message = {
-      sender: user._id,
+      senderId: user._id,
+
       text: newMessage,
       conversationId: currentChat._id,
     };
@@ -101,7 +102,7 @@ export default function Messenger({ username }) {
 
     socket.current.emit("sendMessage", {
       senderId: user._id,
-      receiverId,
+      receiverId: receiverId,
       text: newMessage,
     });
 
@@ -125,16 +126,17 @@ export default function Messenger({ username }) {
         <div className="chatMenu">
           <div className="chatMenuWrapper">
             <input placeholder="Buscar chat" className="chatMenuInput" />
-            {conversations.map((c) => (
-              <div onClick={() => setCurrentChat(c)}>
-                <Conversation conversation={c} currentUser={user} />
-              </div>
-            ))}
+            Empresas conectadas:
             <ChatOnline
               onlineUsers={onlineUsers}
               currentId={user._id}
               setCurrentChat={setCurrentChat}
             />
+            {conversations.map((c) => (
+              <div onClick={() => setCurrentChat(c)}>
+                <Conversation conversation={c} currentUser={user} />
+              </div>
+            ))}
           </div>
         </div>
         <div className="chatBox">

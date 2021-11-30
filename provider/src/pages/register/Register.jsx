@@ -35,7 +35,7 @@ export default function Register() {
       <div className="loginWrapper">
         <div className="loginLeft">
           proveedores
-          <h3 className="loginLogo">nodox</h3>
+          <h3 className="loginLogo">Marketb2b</h3>
           <span className="loginDesc">
             Conecta con tus proveedores y clientes.
           </span>
