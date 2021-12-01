@@ -24,20 +24,6 @@ export default function Messenger({ username }) {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      const res = username
-        ? await axios.get("/posts/profile/" + username)
-        : await axios.get("posts/timeline/" + user._id);
-      setPosts(
-        res.data.sort((p1, p2) => {
-          return new Date(p2.createdAt) - new Date(p1.createdAt);
-        })
-      );
-    };
-
-    fetchPosts();
-  }, [username, user._id]);
-  useEffect(() => {
     socket.current = io("ws://localhost:8900");
     socket.current.on("getMessage", (data) => {
       setArrivalMessage({
@@ -66,7 +52,7 @@ export default function Messenger({ username }) {
   useEffect(() => {
     const getConversations = async () => {
       try {
-        const res = await axios.get("/conversations/" + user?._id);
+        const res = await axios.get("/conversations/" + user._id);
         setConversations(res.data);
       } catch (err) {
         console.log(err);
@@ -90,8 +76,7 @@ export default function Messenger({ username }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const message = {
-      senderId: user._id,
-
+      sender: user._id,
       text: newMessage,
       conversationId: currentChat._id,
     };
@@ -102,7 +87,7 @@ export default function Messenger({ username }) {
 
     socket.current.emit("sendMessage", {
       senderId: user._id,
-      receiverId: receiverId,
+      receiverId,
       text: newMessage,
     });
 
