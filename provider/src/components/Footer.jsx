@@ -84,7 +84,7 @@ const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo>nodox</Logo>
+        <Logo>MarketB2B</Logo>
         <Desc>Conecta con proveedores y clientes.</Desc>
         {/*<SocialContainer>
 			<SocialIcon color="3B5999">
@@ -116,8 +116,7 @@ const Footer = () => {
           <Phone style={{ marginRight: "10px" }} /> +57 310 672 32 25
         </ContactItem>
         <ContactItem>
-          <MailOutline style={{ marginRight: "10px" }} />{" "}
-          busisnesssonder@gmail.com
+          <MailOutline style={{ marginRight: "10px" }} /> busisnes@gmail.com
         </ContactItem>
       </Right>
     </Container>
