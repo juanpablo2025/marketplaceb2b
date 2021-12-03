@@ -1,9 +1,14 @@
 # marketplaceB2B
  
-installation: npm install
+# Installation:
+-npm install
+-create .env file with MONGO_URL= connection
+-npm run start
 
-create .env file with MONGODB connection
+# Bugs:
+- Connect backend with Frontend server
+- Need create conversation with postman, socket server is no working
+- differents visual/ thins in the frontend
 
 
-run: npm run start
 
